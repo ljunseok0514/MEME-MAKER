@@ -36,7 +36,10 @@ function onColorChange(event) {
   ctx.fillStyle = event.target.value;
 }
 function onColorClick(event) {
-  console.dir(event.target.dataset.color);
+  const colorValue = event.target.dataset.color;
+  ctx.strokeStyle = colorValue;
+  ctx.fillStyle = colorValue;
+  color.value = colorValue;
 }
 canvas.addEventListener("mousemove", onMove);
 canvas.addEventListener("mousedown", startPainting);
